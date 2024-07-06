@@ -10,7 +10,7 @@
 
 - AZURE ORGANIZATION AND INFRASTRUCTURE:
   - "Organization and relationships."
-  1. What is Azure? Microsoft's public cloud computing platform.
+  - What is Azure? Microsoft's public cloud computing platform.
     - Two hundred individual products and services.
     - Build, run, and manage applications on Microsoft's *global* infrastruction:
       - Infrastructure as a Service: IaaS.
@@ -18,13 +18,13 @@
       - Software as a Service: SaaS. (Managed services.)
       - Pay-as-you-go pricing. No up-front commitment for resources.
         - Operational expense.
-  2. Azure Global Infrastructure:
+  - Azure Global Infrastructure:
     - Datacenter infrastructure:
     - Breakdown between regions and availability zones:
       - Region: Group of datacenters in a single geographic location.
       - Availability zone: One of several unique physical locations in a region.
         - Providing an addditional layer of fault tolerance.
-  3. Azure Services:
+  - Azure Services:
     - Available business (managed) services. Via portal page.
       - Solutiuons. Services.
       - IaaS: Virtual servers. You maintain OS.
@@ -33,14 +33,14 @@
     - Azure Resource Manager (ARM.):
       - Interaction: SDKs. ARM: Single portal. Centralized management layer.
         - CLI. Application access. Authentication.
-  4. Resource Hierarchy and Organization:
-    a. Organization:
+  - Resource Hierarchy and Organization:
+    - Organization:
       - Tenant: Management Groups: Subscriptions: Resource Groups: Resources.
         - Access and policies granted to parrents are inherited by child levels.
         - A child can only have one parent. Similiar to OS file structure.
-    b. Tracking: (Segmentating.) Payment.
-    c. Limiting: Access to different sets of resources. Or not.
-  5. Identity and Access Management. (IAM:)
+    - Tracking: (Segmentating.) Payment.
+    - Limiting: Access to different sets of resources. Or not.
+  - Identity and Access Management. (IAM:)
     - Who? Azure Active Directory. (Azure AD,) Cloud-based identity service.
       - One per tenant. Who are you? Identity equals 'security principle.'
       = Manage end users (people) or applications.
@@ -54,7 +54,7 @@
       - The set of resources allowed to access. "On which resources?"
       - Roles granted to various layers of resource heirarchy.
       - Lower levels inherit roles from higher levels.
-  6. Monitoring Your Azure Environment:
+  - Monitoring Your Azure Environment:
     - Are resources performing as expected?
     - Are there errors I need to be aware of?
     - Who is making changes to my cloud environment?
@@ -66,4 +66,66 @@
           - CPU Utilization. Latency.
 
 - CORE SERVICES:
-  - Fundamental building blocks.
+  - Fundamental building blocks:
+  - Virtual machines (Compute:) IaaS.
+    - Azure: Physical hardware and networking. 
+      - Base OS image. Hypervisor (virtualization) management.
+    - Company: Updating/patching OS and installed software. 
+      - OS access and management. Software installation.
+    - Trade-off: Flexibility versus less management (managed.)
+      - VM replication. If VM goes down, a copied VM can take over. Via zones.
+    - Scale set. Multiple copies of VMs. (With load balancer.)
+      - Enables scaling and elasticity.
+  - Networking:
+    - Virtual network. (VNet.) "Home network" Internal and external adresses.
+      - Provides public or private netwrok communication among Azure resources.
+      - Private network uses internal IP addresses to communicate.
+      - Subnet: Segment multiple resources for precise organization.
+      - Peering/VPN/Express route: 
+        - Connect to other Azure VNets across regions, on-premises networks, or other cloud networks.
+      - Network security groups/firewall:
+        - Control access to VNet resources by network protocol, port, or source locations.
+  - Storage: Blob. Queues. Files. Disks. Tables (Sort of)
+    - DBs are technically a different type of storage.
+    - Storage account. All-purpose storage solution for multiple data storage scenarios.
+    - Resource group - Storage account - Sub-service type. (More than one.)
+    - BLOB: Binary large object.
+      - Object storage. Unstructured data. All file types. Images. Videos.
+    - Files: Network file share in the cloud.
+    - Disks: Virtual hard drives for VMs.
+    - Queues: Asynchronous messaging between apps and services.
+    - Tables: NoSQL database storage. Gradually transitioning to Cosmos DB.
+    - e.g.: MUSIC APPLICATION - Storage Account - Audio files.
+  - Database And Analytics:
+    - NOTE: Both core and managed services.
+    - SQL, Azure Synapse analytics, Cosmos DB, SQL Stretch Database.
+    - Azure cache for Redis, Table stroage, Azure search.
+    - DB: Structured data: e.g.: User directory. Transactional records. Product catalog.
+    - PaaS: Multiple managed database services.
+      - Azure SQL, COsmos DB, Managed MySQL/PostgreSQL, etc.
+      - SQL versus NoSQL. 
+      - "Fully managed" versus provisioned infrastructure.
+      - Single region versus multiple regions.
+      - Open source versus proprietary.
+    - NOTE: Seperating storage from compute.
+      - Music Application <-> SQL Database. (User names and passwords.)
+      - Music Application <-> Storage Account.
+      - Music Application <-> Azure Cosmos DB (Music Catalog.) <-> Audio Files.
+    - Analytics: (& IoT)
+      - Analyzing data for insight. Massive amounts of queried data.
+      - e.g.:
+        - BUsiness Intelligence <-> Azure Synapse (Query & Visualization.) <-> Azure Data Lake (Customer Metrics.)
+  - App Service And Serverless Compute:
+    - Music Application hosted on VM. IaaS.
+    - Full flexibility, but with a cost of increased responsibilitity.
+      - OS updates & patching.
+      - Compute (CPU/RAM) and storage management.
+      - Scaling via VM scale sets.
+    - VERSUS: Application code with Azure handling everything else:
+      - Web Apps: App service = "serverless" compute.
+      - Azure controls 100% of the virtual machine. We update and push code.
+      - App service supports multiple languages and conyainers. But VMs are more flexible.
+      - App service is a developer/coding tool. 100% cpding-focused.
+
+- POWER OF CLOUD COMPUTING:
+  - Azure Managed Services:
