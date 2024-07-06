@@ -129,3 +129,29 @@
 
 - POWER OF CLOUD COMPUTING:
   - Azure Managed Services:
+    - IaaS: Management responsibility:
+    - Azure VM = Server (Application Hosting) =
+      - [CPU, RAM, Hard Drive/Storage, Network Card, Firewall (Security), OS]
+    - Managed service = managed solutions.
+    - EXAMPLE: SQL:
+      - Azure: OS backups/patching. Backups.
+      - You: Compute and storage configuration. Loading and working with the data.
+    - Container/Kubernetes Services:
+      - Self-contained, portable, software packaging mechnaism. Not dependent upon underlying OS.
+      - Kubernetes: Populare container orchestration service.
+    - AI/Machine Learning:
+      - Managed machine learning services. Enable applications to automatically recognize patterns.
+        - e.g.: Image recognition. Pre-trained services or build your own custom model.
+    - Big Data: Abilitity to analyze massive amounts of data for business results.
+      - Terabytes. Petabytes.
+      - HDInsight: Fully managed Hadoop/Spark ecosystem.
+      - Azure Synapse: Query massive amounts of data in fully serverless format.
+      - Power BI. SaaS dashboards for visualizing data analytics.
+    - IoT. Internet-connected objects. Smart doorbells. Tempature sensors. Self-driving cars.
+      - Solutions for the entire collection process:
+        - Ingestion. Storage. Analysis. Ingrates with big data tools.
+  - Cloud Advantage Scenarios:
+    - Fault tolerance. (Redundancy/resiliency.)
+    - High availability.
+    - Scalability.
+    - Elasticity.
